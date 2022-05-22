@@ -5,7 +5,11 @@ Unity 2018+.
 1. Add plugins file in your project.
 2. Add SignalR class to object on scene.
 3. Set url and if needed token.
-4. Run project.
+4. In Player Settings -> Android/IOS -> Other Settings -> Configuration: 
+    Scripting backend select IL2CPP.
+    Api Compatibility Level select .NetStandart.
+    Internet Access select Require.
+5. Run and build project.
 
 # Send request
 This class has a "Send" method. Call it, pass in the generics the type of the object being passed and the object being desilirized. In the parameters, pass the link and the object itself.
