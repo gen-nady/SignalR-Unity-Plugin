@@ -1,4 +1,4 @@
-# SignalR Unity Plugin
+# Unity SignalR Android/IOS Plugin
 Work on PC, IOS, Android.
 Unity 2018+.
 # Setup:
