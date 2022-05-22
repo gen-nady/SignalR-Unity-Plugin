@@ -12,7 +12,6 @@ public class SignalR : MonoBehaviour
 
     private async void Awake()
     {
-        url = "https://poker.rdo.belhard.com/poker/api/hubs/nlh-club-lobby";
         await GetConnection();
     }
     
@@ -47,5 +46,17 @@ public class SignalR : MonoBehaviour
             .Build();
         await connection.StartAsync();
         Debug.Log("Connection SignalR is active!");
+    }
+    /// <summary>
+    /// Calling a Method on SignalR
+    /// </summary>
+    /// <param name="methodName">Name method on server</param>
+    /// <param name="objSend">Object for sender</param>
+    /// <typeparam name="TSender">Type object for sender</typeparam>
+    /// <typeparam name="TResult">Type object for deserialization</typeparam>
+    /// <returns></returns>
+    public async Task<TResult> Send<TSender, TResult> (string methodName, TSender objSend)
+    {
+        return await connection.InvokeAsync<TResult>(methodName, objSend);
     }
 }
